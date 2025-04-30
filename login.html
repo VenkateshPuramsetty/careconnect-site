@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - CareConnect India</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      line-height: 1.6;
+    }
+    nav { background: #333; color: #fff; padding: 10px; text-align: center; }
+    nav a { color: #fff; margin: 0 10px; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    header {
+      background-color: #2575fc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    form {
+      background-color: white;
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #2575fc;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #6a11cb;
+    }
+    .register-links {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .register-links a {
+      color: #2575fc;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .register-links a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333333;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+  <a href="homepage.html">Home</a>
+  <a href="elderly-registration.html">Elderly Signup</a>
+  <a href="student-registration.html">Student Signup</a>
+  <a href="login.html">Login</a>
+</nav>
+
+<header>
+  <h1>Login to CareConnect</h1>
+</header>
+
+<form>
+  <h2>Welcome Back</h2>
+
+  <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+  </div>
+
+  <div class="form-group">
+    <label for="usertype">Login As</label>
+    <select id="usertype" name="usertype" required>
+      <option value="">Select User Type</option>
+      <option value="elderly">Elderly User</option>
+      <option value="student">Medical Student</option>
+    </select>
+  </div>
+
+  <button type="submit">Login</button>
+
+  <div class="register-links">
+    <p>
+      New here? 
+      <a href="elderly-registration.html">Register as Elderly</a> | 
+      <a href="student-registration.html">Register as Student</a> | 
+      <a href="homepage.html">Back to Home</a>
+    </p>
+  </div>
+</form>
+
+<footer>
+  &copy; 2025 CareConnect India. All rights reserved.
+</footer>
+
+<script>
+  function handleLogin(event) {
+    event.preventDefault();
+    const userType = document.getElementById("usertype").value;
+    if (userType === "elderly") {
+      window.location.href = "dashboard-elderly.html";
+    } else if (userType === "student") {
+      window.location.href = "dashboard-student.html";
+    } else {
+      alert("Please select your user type.");
+    }
+  }
+</script>
+
+
+</body>
+</html>
